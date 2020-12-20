@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "id": "blinkingskinport",
+  "version": "${version}",
+
+  "name": "Blinking Skin Port",
+  "description": "Allows you to automatically toggle your 2nd skin layers in configurable intervals.",
+  "authors": [
+    "Motschen",
+    "TeamMidnightDust"
+  ],
+  "contact": {
+    "homepage": "https://www.midnightdust.eu/",
+    "sources": "https://github.com/TeamMidnightDust/BlinkingSkinPort",
+    "issues": "https://github.com/TeamMidnightDust/BlinkingSkinPort/issues"
+  },
+
+  "license": "MIT",
+  "icon": "assets/blinkingskinport/icon.png",
+
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "eu.midnightdust.blinkingskinport.BlinkingSkinClient"
+    ],
+    "modmenu": [
+      "eu.midnightdust.blinkingskinport.config.ModMenuIntegration"
+    ]
+  },
+
+  "depends": {
+    "fabric": "*"
+  }
+}

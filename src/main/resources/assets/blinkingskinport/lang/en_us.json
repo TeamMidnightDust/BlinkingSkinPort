@@ -1,0 +1,23 @@
+{
+	"text.autoconfig.blinkingskinport.title":"BlinkingSkinPort Config",
+	
+	"text.autoconfig.blinkingskinport.option.enabled":"Enable Mod",
+	
+	"text.autoconfig.blinkingskinport.option.capeEnabled.@PrefixText":" ",
+	"text.autoconfig.blinkingskinport.option.capeEnabled":"Blink Cape",
+	"text.autoconfig.blinkingskinport.option.hatEnabled":"Blink Hat",
+	"text.autoconfig.blinkingskinport.option.jacketEnabled":"Blink Jacket",
+	"text.autoconfig.blinkingskinport.option.leftSleeveEnabled":"Blink Left Sleeve",
+	"text.autoconfig.blinkingskinport.option.rightSleeveEnabled":"Blink Right Sleeve",
+	"text.autoconfig.blinkingskinport.option.leftPantsLegEnabled":"Blink Left Pants",
+	"text.autoconfig.blinkingskinport.option.rightPantsLegEnabled":"Blink Right Pants",
+	
+	"text.autoconfig.blinkingskinport.option.enabled.@PrefixText":"§cBlink Intervals lower than 5 are disabled, because they can be used to trigger epileptic episodes, which isn't fun for affected people!",
+	"text.autoconfig.blinkingskinport.option.capeBlinkInterval":"Cape Blink Interval",
+	"text.autoconfig.blinkingskinport.option.hatBlinkInterval":"Hat Blink Interval",
+	"text.autoconfig.blinkingskinport.option.jacketBlinkInterval":"Jacket Blink Interval",
+	"text.autoconfig.blinkingskinport.option.leftSleeveBlinkInterval":"Left Sleeve Blink Interval",
+	"text.autoconfig.blinkingskinport.option.rightSleeveBlinkInterval":"Right Sleeve Blink Interval",
+	"text.autoconfig.blinkingskinport.option.leftPantsLegBlinkInterval":"Left Pants Blink Interval",
+	"text.autoconfig.blinkingskinport.option.rightPantsLegBlinkInterval":"Right Pants Blink Interval"
+}
