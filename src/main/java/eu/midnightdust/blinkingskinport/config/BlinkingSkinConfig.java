@@ -1,91 +1,62 @@
 package eu.midnightdust.blinkingskinport.config;
 
-import me.sargunvohra.mcmods.autoconfig1u.ConfigData;
-import me.sargunvohra.mcmods.autoconfig1u.annotation.Config;
-import me.sargunvohra.mcmods.autoconfig1u.annotation.ConfigEntry;
-import me.sargunvohra.mcmods.autoconfig1u.shadowed.blue.endless.jankson.Comment;
+import eu.midnightdust.lib.config.MidnightConfig;
 import net.minecraft.client.render.entity.PlayerModelPart;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Arrays;
 
-@Config(name = "blinkingskinport")
-public class BlinkingSkinConfig implements ConfigData {
+public class BlinkingSkinConfig extends MidnightConfig {
 
-    @ConfigEntry.Gui.PrefixText // Blink Intervals lower than 5 are disabled, because they can be used to trigger epileptic episodes, which isn't fun for affected people!
-    public boolean enabled = false;
+    @Entry public static boolean enabled = false;
 
-    @ConfigEntry.Gui.PrefixText
-    public boolean capeEnabled = true;
-    @ConfigEntry.BoundedDiscrete(min = 5, max = 200)
-    @Comment("(20 ticks = 1 second)")
-    public int capeBlinkInterval = 20;
-    public boolean hatEnabled = true;
-    @ConfigEntry.BoundedDiscrete(min = 5, max = 200)
-    @Comment("(20 ticks = 1 second)")
-    public int hatBlinkInterval = 20;
-    public boolean jacketEnabled = true;
-    @ConfigEntry.BoundedDiscrete(min = 5, max = 200)
-    @Comment("(20 ticks = 1 second)")
-    public int jacketBlinkInterval = 20;
-    public boolean leftSleeveEnabled = true;
-    @ConfigEntry.BoundedDiscrete(min = 5, max = 200)
-    @Comment("(20 ticks = 1 second)")
-    public int leftSleeveBlinkInterval = 20;
-    public boolean rightSleeveEnabled = true;
-    @ConfigEntry.BoundedDiscrete(min = 5, max = 200)
-    @Comment("(20 ticks = 1 second)")
-    public int rightSleeveBlinkInterval = 20;
-    public boolean leftPantsLegEnabled = true;
-    @ConfigEntry.BoundedDiscrete(min = 5, max = 200)
-    @Comment("(20 ticks = 1 second)")
-    public int leftPantsLegBlinkInterval = 20;
-    public boolean rightPantsLegEnabled = true;
-    @ConfigEntry.BoundedDiscrete(min = 5, max = 200)
-    @Comment("(20 ticks = 1 second)")
-    public int rightPantsLegBlinkInterval = 20;
+    @Entry public static String player = ""; // Optional: Only enable the mod when the name matches the currently active account. Useful for users with multiple minecraft accounts
+    @Entry public static String server_blacklist = ""; // Blacklist servers. Seperate with ";"
 
+    @Comment public static Comment spacer;
+    @Entry public static boolean capeEnabled = true;
+    @Entry public static boolean hatEnabled = true;
+    @Entry public static boolean jacketEnabled = true;
+    @Entry public static boolean leftSleeveEnabled = true;
+    @Entry public static boolean rightSleeveEnabled = true;
+    @Entry public static boolean leftPantsLegEnabled = true;
+    @Entry public static boolean rightPantsLegEnabled = true;
+    @Comment public static Comment spacer2;
+    @Comment public static Comment disclaimer; // Blink Intervals lower than 5 are disabled, because they can be used to trigger epileptic episodes, which isn't fun for affected people!
+    @Comment public static Comment disclaimer2;
+    @Entry(min = 5, max = 1000) public static int capeBlinkInterval = 20;
+    @Entry(min = 5, max = 1000) public static int hatBlinkInterval = 20;
+    @Entry(min = 5, max = 1000) public static int jacketBlinkInterval = 20;
+    @Entry(min = 5, max = 1000) public static int leftSleeveBlinkInterval = 20;
+    @Entry(min = 5, max = 1000) public static int rightSleeveBlinkInterval = 20;
+    @Entry(min = 5, max = 1000) public static int leftPantsLegBlinkInterval = 20;
+    @Entry(min = 5, max = 1000) public static int rightPantsLegBlinkInterval = 20;
 
-    public boolean isEnabled(PlayerModelPart part) {
-        switch (part) {
-            case HAT:
-                return hatEnabled;
-            case CAPE:
-                return capeEnabled;
-            case JACKET:
-                return jacketEnabled;
-            case LEFT_SLEEVE:
-                return leftSleeveEnabled;
-            case RIGHT_SLEEVE:
-                return rightSleeveEnabled;
-            case LEFT_PANTS_LEG:
-                return leftPantsLegEnabled;
-            case RIGHT_PANTS_LEG:
-                return rightPantsLegEnabled;
-            default:
-                throw new AssertionError("Could not get value for " + part);
-        }
+    public static boolean isEnabled(PlayerModelPart part) {
+        return switch (part) {
+            case HAT -> hatEnabled;
+            case CAPE -> capeEnabled;
+            case JACKET -> jacketEnabled;
+            case LEFT_SLEEVE -> leftSleeveEnabled;
+            case RIGHT_SLEEVE -> rightSleeveEnabled;
+            case LEFT_PANTS_LEG -> leftPantsLegEnabled;
+            case RIGHT_PANTS_LEG -> rightPantsLegEnabled;
+        };
     }
 
-    public int getToggleInterval(PlayerModelPart part) {
-        switch (part) {
-            case HAT:
-                return hatBlinkInterval;
-            case CAPE:
-                return capeBlinkInterval;
-            case JACKET:
-                return jacketBlinkInterval;
-            case LEFT_SLEEVE:
-                return leftSleeveBlinkInterval;
-            case RIGHT_SLEEVE:
-                return rightSleeveBlinkInterval;
-            case LEFT_PANTS_LEG:
-                return leftPantsLegBlinkInterval;
-            case RIGHT_PANTS_LEG:
-                return rightPantsLegBlinkInterval;
-            default:
-                throw new AssertionError("Could not get interval for " + part);
-        }
+    public static int getToggleInterval(PlayerModelPart part) {
+        return switch (part) {
+            case HAT -> hatBlinkInterval;
+            case CAPE -> capeBlinkInterval;
+            case JACKET -> jacketBlinkInterval;
+            case LEFT_SLEEVE -> leftSleeveBlinkInterval;
+            case RIGHT_SLEEVE -> rightSleeveBlinkInterval;
+            case LEFT_PANTS_LEG -> leftPantsLegBlinkInterval;
+            case RIGHT_PANTS_LEG -> rightPantsLegBlinkInterval;
+        };
+    }
+    public static boolean isBlacklisted(String address) {
+        if (server_blacklist.isBlank()) return false;
+        return Arrays.stream(server_blacklist.split(";")).anyMatch(ip -> ip.contains(address));
     }
 
 }

@@ -22,13 +22,13 @@
   "entrypoints": {
     "client": [
       "eu.midnightdust.blinkingskinport.BlinkingSkinClient"
-    ],
-    "modmenu": [
-      "eu.midnightdust.blinkingskinport.config.ModMenuIntegration"
     ]
   },
 
   "depends": {
-    "fabric": "*"
-  }
+    "midnightlib": "*"
+  },
+  "mixins": [
+    "blinkingskinport.mixins.json"
+  ]
 }
