@@ -1,0 +1,36 @@
+{
+	"blinkingskinport.midnightconfig.title":"BlinkingSkinPort Konfiguration",
+	
+	"blinkingskinport.midnightconfig.enabled":"Mod aktivieren",
+	"blinkingskinport.midnightconfig.player":"Name des aktivierten Benutzers",
+	"blinkingskinport.midnightconfig.player.tooltip":"Optional. Für Nutzer mehrerer Accounts.",
+	"blinkingskinport.midnightconfig.server_blacklist":"Server Blacklist",
+	"blinkingskinport.midnightconfig.server_blacklist.tooltip":"Optional. Einzelne Einträge mit Semicolon [ ; ]",
+	
+	"blinkingskinport.midnightconfig.spacer":"",
+	"blinkingskinport.midnightconfig.capeEnabled":"Blinke Cape",
+	"blinkingskinport.midnightconfig.hatEnabled":"Blinke Hut",
+	"blinkingskinport.midnightconfig.jacketEnabled":"Blinke Jacke",
+	"blinkingskinport.midnightconfig.leftSleeveEnabled":"Blinke linken Arm",
+	"blinkingskinport.midnightconfig.rightSleeveEnabled":"Blinke rechten Arm",
+	"blinkingskinport.midnightconfig.leftPantsLegEnabled":"Blinke linkes Bein",
+	"blinkingskinport.midnightconfig.rightPantsLegEnabled":"Blinke rechtes Bein",
+
+	"blinkingskinport.midnightconfig.spacer2":"",
+	"blinkingskinport.midnightconfig.disclaimer":"§cBlink Abstände von unter 5 Sekunden werden nicht akzeptiert, da sie",
+	"blinkingskinport.midnightconfig.disclaimer2":"§cEpileptische Anfälle auslösen könnten, was für Betroffene keinen Spaß macht.",
+	"blinkingskinport.midnightconfig.capeBlinkInterval":"Cape Blink Abstand",
+	"blinkingskinport.midnightconfig.capeBlinkInterval.tooltip":"§2(20 ticks = 1 Sekunde)",
+	"blinkingskinport.midnightconfig.hatBlinkInterval":"Hut Blink Abstand",
+	"blinkingskinport.midnightconfig.hatBlinkInterval.tooltip":"§2(20 ticks = 1 Sekunde)",
+	"blinkingskinport.midnightconfig.jacketBlinkInterval":"Jacke Blink Abstand",
+	"blinkingskinport.midnightconfig.jacketBlinkInterval.tooltip":"§2(20 ticks = 1 Sekunde)",
+	"blinkingskinport.midnightconfig.leftSleeveBlinkInterval":"Linker Arm Blink Abstand",
+	"blinkingskinport.midnightconfig.leftSleeveBlinkInterval.tooltip":"§2(20 ticks = 1 Sekunde)",
+	"blinkingskinport.midnightconfig.rightSleeveBlinkInterval":"Rechter Arm Blink Abstand",
+	"blinkingskinport.midnightconfig.rightSleeveBlinkInterval.tooltip":"§2(20 ticks = 1 Sekunde)",
+	"blinkingskinport.midnightconfig.leftPantsLegBlinkInterval":"Linkes Bein Blink Abstand",
+	"blinkingskinport.midnightconfig.leftPantsLegBlinkInterval.tooltip":"§2(20 ticks = 1 Sekunde)",
+	"blinkingskinport.midnightconfig.rightPantsLegBlinkInterval":"Rechtes Bein Blink Abstand",
+	"blinkingskinport.midnightconfig.rightPantsLegBlinkInterval.tooltip":"§2(20 ticks = 1 Sekunde)"
+}
