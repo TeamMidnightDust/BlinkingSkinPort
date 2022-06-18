@@ -4,8 +4,8 @@
 	"blinkingskinport.midnightconfig.enabled":"Enable Mod",
 	"blinkingskinport.midnightconfig.player":"Enabled Account Name",
 	"blinkingskinport.midnightconfig.player.tooltip":"Optional. For multi-account users.",
-	"blinkingskinport.midnightconfig.server_blacklist":"Server Blacklist",
-	"blinkingskinport.midnightconfig.server_blacklist.tooltip":"Optional. Separate entries with Semicolon [ ; ]",
+	"blinkingskinport.midnightconfig.serverBlocklist":"Server Blocklist",
+	"blinkingskinport.midnightconfig.useBlocklistAsAllowlist":"Use Blocklist as Allowlist",
 	
 	"blinkingskinport.midnightconfig.spacer":"",
 	"blinkingskinport.midnightconfig.capeEnabled":"Blink Cape",

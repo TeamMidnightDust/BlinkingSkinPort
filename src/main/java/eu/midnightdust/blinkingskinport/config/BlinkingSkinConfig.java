@@ -3,14 +3,17 @@ package eu.midnightdust.blinkingskinport.config;
 import eu.midnightdust.lib.config.MidnightConfig;
 import net.minecraft.client.render.entity.PlayerModelPart;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class BlinkingSkinConfig extends MidnightConfig {
 
     @Entry public static boolean enabled = false;
 
     @Entry public static String player = ""; // Optional: Only enable the mod when the name matches the currently active account. Useful for users with multiple minecraft accounts
-    @Entry public static String server_blacklist = ""; // Blacklist servers. Seperate with ";"
+    @Entry public static List<String> serverBlocklist = new ArrayList<>();
+    @Entry public static boolean useBlocklistAsAllowlist = false;
 
     @Comment public static Comment spacer;
     @Entry public static boolean capeEnabled = true;
@@ -54,9 +57,9 @@ public class BlinkingSkinConfig extends MidnightConfig {
             case RIGHT_PANTS_LEG -> rightPantsLegBlinkInterval;
         };
     }
-    public static boolean isBlacklisted(String address) {
-        if (server_blacklist.isBlank()) return false;
-        return Arrays.stream(server_blacklist.split(";")).anyMatch(ip -> ip.contains(address));
+    public static boolean isBlocklisted(String address) {
+        if (serverBlocklist.isEmpty()) return useBlocklistAsAllowlist;
+        return serverBlocklist.contains(address) != useBlocklistAsAllowlist;
     }
 
 }

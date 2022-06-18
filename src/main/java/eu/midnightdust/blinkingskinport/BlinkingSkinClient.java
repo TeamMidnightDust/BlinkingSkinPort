@@ -23,7 +23,7 @@ public class BlinkingSkinClient implements ClientModInitializer {
 
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
             if (BlinkingSkinConfig.enabled && (BlinkingSkinConfig.player.equals("") || client.getSession().getUsername().equals(BlinkingSkinConfig.player))) {
-                if (client.getCurrentServerEntry() != null && BlinkingSkinConfig.isBlacklisted(client.getCurrentServerEntry().address)) return;
+                if (client.getCurrentServerEntry() != null && BlinkingSkinConfig.isBlocklisted(client.getCurrentServerEntry().address)) return;
                 for (Map.Entry<PlayerModelPart,Integer> interval : this.intervals.entrySet()) {
                     if (!BlinkingSkinConfig.isEnabled(interval.getKey())) {
                         continue;
