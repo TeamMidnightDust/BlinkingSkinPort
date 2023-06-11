@@ -1,5 +1,6 @@
 package eu.midnightdust.blinkingskinport.config;
 
+import com.google.common.collect.Lists;
 import eu.midnightdust.lib.config.MidnightConfig;
 import net.minecraft.client.render.entity.PlayerModelPart;
 
@@ -8,31 +9,31 @@ import java.util.Arrays;
 import java.util.List;
 
 public class BlinkingSkinConfig extends MidnightConfig {
+    public static final String general = "general";
+    public static final String parts = "parts";
+    public static final String intervals = "intervals";
 
-    @Entry public static boolean enabled = false;
+    @Entry(category = general) public static boolean enabled = false;
 
-    @Entry public static String player = ""; // Optional: Only enable the mod when the name matches the currently active account. Useful for users with multiple minecraft accounts
-    @Entry public static List<String> serverBlocklist = new ArrayList<>();
-    @Entry public static boolean useBlocklistAsAllowlist = false;
-
-    @Comment public static Comment spacer;
-    @Entry public static boolean capeEnabled = true;
-    @Entry public static boolean hatEnabled = true;
-    @Entry public static boolean jacketEnabled = true;
-    @Entry public static boolean leftSleeveEnabled = true;
-    @Entry public static boolean rightSleeveEnabled = true;
-    @Entry public static boolean leftPantsLegEnabled = true;
-    @Entry public static boolean rightPantsLegEnabled = true;
-    @Comment public static Comment spacer2;
-    @Comment public static Comment disclaimer; // Blink Intervals lower than 5 are disabled, because they can be used to trigger epileptic episodes, which isn't fun for affected people!
-    @Comment public static Comment disclaimer2;
-    @Entry(min = 5, max = 1000) public static int capeBlinkInterval = 20;
-    @Entry(min = 5, max = 1000) public static int hatBlinkInterval = 20;
-    @Entry(min = 5, max = 1000) public static int jacketBlinkInterval = 20;
-    @Entry(min = 5, max = 1000) public static int leftSleeveBlinkInterval = 20;
-    @Entry(min = 5, max = 1000) public static int rightSleeveBlinkInterval = 20;
-    @Entry(min = 5, max = 1000) public static int leftPantsLegBlinkInterval = 20;
-    @Entry(min = 5, max = 1000) public static int rightPantsLegBlinkInterval = 20;
+    @Entry(category = general) @Hidden public static String player = "";
+    @Entry(category = general) public static List<String> playerAllowList = Lists.newArrayList(player); // Optional: Only enable the mod when one of the names matches the currently active account. Useful for users with multiple minecraft accounts
+    @Entry(category = general) public static List<String> serverBlocklist = new ArrayList<>();
+    @Entry(category = general) public static boolean useBlocklistAsAllowlist = false;
+    @Entry(category = parts) public static boolean capeEnabled = true;
+    @Entry(category = parts) public static boolean hatEnabled = true;
+    @Entry(category = parts) public static boolean jacketEnabled = true;
+    @Entry(category = parts) public static boolean leftSleeveEnabled = true;
+    @Entry(category = parts) public static boolean rightSleeveEnabled = true;
+    @Entry(category = parts) public static boolean leftPantsLegEnabled = true;
+    @Entry(category = parts) public static boolean rightPantsLegEnabled = true;
+    @Comment(category = intervals) public static Comment disclaimer; // Blink Intervals lower than 5 are disabled, because they could trigger epileptic episodes, which isn't fun for affected people!
+    @Entry(category = intervals, min = 5, max = 250, isSlider = true) public static int capeBlinkInterval = 20;
+    @Entry(category = intervals, min = 5, max = 250, isSlider = true) public static int hatBlinkInterval = 20;
+    @Entry(category = intervals, min = 5, max = 250, isSlider = true) public static int jacketBlinkInterval = 20;
+    @Entry(category = intervals, min = 5, max = 250, isSlider = true) public static int leftSleeveBlinkInterval = 20;
+    @Entry(category = intervals, min = 5, max = 250, isSlider = true) public static int rightSleeveBlinkInterval = 20;
+    @Entry(category = intervals, min = 5, max = 250, isSlider = true) public static int leftPantsLegBlinkInterval = 20;
+    @Entry(category = intervals, min = 5, max = 250, isSlider = true) public static int rightPantsLegBlinkInterval = 20;
 
     public static boolean isEnabled(PlayerModelPart part) {
         return switch (part) {

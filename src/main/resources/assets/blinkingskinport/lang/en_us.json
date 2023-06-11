@@ -1,13 +1,16 @@
 {
 	"blinkingskinport.midnightconfig.title":"BlinkingSkinPort Config",
+
+	"blinkingskinport.midnightconfig.category.general":"General",
+	"blinkingskinport.midnightconfig.category.parts":"Parts",
+	"blinkingskinport.midnightconfig.category.intervals":"Intervals",
 	
 	"blinkingskinport.midnightconfig.enabled":"Enable Mod",
-	"blinkingskinport.midnightconfig.player":"Enabled Account Name",
-	"blinkingskinport.midnightconfig.player.tooltip":"Optional. For multi-account users.",
+	"blinkingskinport.midnightconfig.playerAllowList":"Enabled Account Names",
+	"blinkingskinport.midnightconfig.playerAllowList.tooltip":"Optional. For multi-account users.",
 	"blinkingskinport.midnightconfig.serverBlocklist":"Server Blocklist",
 	"blinkingskinport.midnightconfig.useBlocklistAsAllowlist":"Use Blocklist as Allowlist",
-	
-	"blinkingskinport.midnightconfig.spacer":"",
+
 	"blinkingskinport.midnightconfig.capeEnabled":"Blink Cape",
 	"blinkingskinport.midnightconfig.hatEnabled":"Blink Hat",
 	"blinkingskinport.midnightconfig.jacketEnabled":"Blink Jacket",
@@ -16,9 +19,7 @@
 	"blinkingskinport.midnightconfig.leftPantsLegEnabled":"Blink Left Pants",
 	"blinkingskinport.midnightconfig.rightPantsLegEnabled":"Blink Right Pants",
 
-	"blinkingskinport.midnightconfig.spacer2":"",
-	"blinkingskinport.midnightconfig.disclaimer":"§cBlink Intervals lower than 5 are disabled, because they could",
-	"blinkingskinport.midnightconfig.disclaimer2":"§ctrigger epileptic seizures, which isn't fun for affected people!",
+	"blinkingskinport.midnightconfig.disclaimer":"§cBlink Intervals lower than 5 are disabled, because they could trigger epileptic seizures, which isn't fun for affected people!",
 	"blinkingskinport.midnightconfig.capeBlinkInterval":"Cape Blink Interval",
 	"blinkingskinport.midnightconfig.capeBlinkInterval.tooltip":"§2(20 ticks = 1 second)",
 	"blinkingskinport.midnightconfig.hatBlinkInterval":"Hat Blink Interval",

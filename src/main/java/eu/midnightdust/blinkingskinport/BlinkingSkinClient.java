@@ -15,14 +15,14 @@ public class BlinkingSkinClient implements ClientModInitializer {
 
     @Override
     public void onInitializeClient() {
-        BlinkingSkinConfig.init("blinkingskinport",BlinkingSkinConfig.class);
+        BlinkingSkinConfig.init("blinkingskinport", BlinkingSkinConfig.class);
 
         for (PlayerModelPart part : PlayerModelPart.values()) {
             this.intervals.put(part, 0);
         }
 
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
-            if (BlinkingSkinConfig.enabled && (BlinkingSkinConfig.player.equals("") || client.getSession().getUsername().equals(BlinkingSkinConfig.player))) {
+            if (BlinkingSkinConfig.enabled && (BlinkingSkinConfig.playerAllowList.isEmpty() || BlinkingSkinConfig.playerAllowList.contains(client.getSession().getUsername()))) {
                 if (client.getCurrentServerEntry() != null && BlinkingSkinConfig.isBlocklisted(client.getCurrentServerEntry().address)) return;
                 for (Map.Entry<PlayerModelPart,Integer> interval : this.intervals.entrySet()) {
                     if (!BlinkingSkinConfig.isEnabled(interval.getKey())) {
